@@ -13,11 +13,11 @@ export default function Home() {
   let moonmoji;
 
   if (phase === 0) {
-    moonmoji = '🌚'; // New Moon
+    moonmoji = { emoji: '🌚', name: 'New Moon' };
   } else if (phase === 0.25) {
-    moonmoji = '🌓'; // First Quarter
+    moonmoji = { emoji: '🌓', name: 'First Quarter' }; 
   } else if (phase > 0.25 && phase < 0.5) {
-    moonmoji = '🌔'; // Waxing Gibbous
+    moonmoji = { emoji: '🌔', name: 'Waxing Gibbous' }; 
   }
 
   return (
@@ -35,7 +35,7 @@ export default function Home() {
 
         <p>What time is <strong>Dawn</strong> in Salt Lake City, UT? {times.dawn.toString()}</p>
 
-        <p>What's today's moon? {moonmoji}</p>
+        <p>What is today's moon? {moonmoji?.emoji} {moonmoji?.name} </p>
       </main>
     </div>
   )
